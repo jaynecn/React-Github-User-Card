@@ -2,9 +2,11 @@ import React from 'react';
 
 export default class CardDisplay extends React.Component {
   render(props){
+    console.log(props);
     return (
       <div>
-        Hello from the Card Display.
+        Card Display
+        <h1>test</h1>
       </div>
     )
   }

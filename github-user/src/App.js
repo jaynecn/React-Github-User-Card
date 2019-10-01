@@ -3,38 +3,39 @@ import axios from 'axios';
 import './App.css';
 import CardDisplay from './CardDisplay';
 
+const jayneApi = 'https://api.github.com/users/jaynecn';
 
-class App extends React.Component{
+
+export default class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      user: [],
-    }
+      users:[],
+    };
   }
 
   //functions
 
   componentDidMount() {
-    axios.get('https://api.github.com/users/jaynecn')
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error.message);
-      })
+    axios.get(jayneApi).then(response => {
+      // console.log(response.data);
+      const jayne = response.data;
+      // console.log(jayne);
+      this.setState({ user: this.state.users.concat(jayne) });
+      console.log(this.state.user);
+      });
   }
 
-
-
+  
   render(){
     return (
       <div>
         Test App II
-        <CardDisplay />
+        <CardDisplay 
+        user={this.state.user}/>
       </div>
     )
   }
 }
 
 
-export default App;
