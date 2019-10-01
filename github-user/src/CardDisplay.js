@@ -1,12 +1,10 @@
 import React from 'react';
 
 export default function CardDisplay(props) {
-  console.log(props);
   return(
     <div className="users">
       {
         props.users.map((info) => (
-          // console.log(info);
           <div className="user-div">
             <div className="image-div">
               <img src={info.avatar_url} alt={info.avatar_url}/>
@@ -25,20 +23,3 @@ export default function CardDisplay(props) {
     </div>
   )
 }
-
-//  class CardDisplay extends React.Component {
-//   constructor(props){
-//     super(props);
-//   }
-
-//   render(props){
-//     console.log(props);
-//     return (
-//       <div>
-//         Card Display
-//         <h1>{props.users}</h1>
-//       </div>
-//     )
-//   }
-
-// }

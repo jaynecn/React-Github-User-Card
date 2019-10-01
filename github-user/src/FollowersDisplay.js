@@ -1,12 +1,10 @@
 import React from 'react';
 
 export default function FollowersDisplay(props) {
-  console.log(props);
   return (
     <div className="followers">
       {
         props.followers.map((info) => (
-          // console.log(info);
           <div className="followers-div">
             <div className="followers-image">
               <img src={info.avatar_url} alt={info.avatar_url}/>

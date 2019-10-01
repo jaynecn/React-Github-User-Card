@@ -41,14 +41,9 @@ export default class App extends React.Component{
     return (
       <div className="App">
         <h1>Github Users</h1>
-        {/* {this.state.users.map((info) => {
-          return <CardDisplay users={info.login}/>
-        })} */}
         <CardDisplay users={this.state.users}/>
         <h2>Followers:</h2>
         <FollowersDisplay followers={this.state.followers}/>
-        {/* <CardDisplay 
-        users={this.state.users}/> */}
       </div>
     )
   }
